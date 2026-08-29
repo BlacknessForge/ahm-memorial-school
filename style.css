@@ -37,6 +37,7 @@
 
 html, body {
     height: 100%;
+    overflow-x: hidden; /* Prevents side-scrolling globally */
 }
 
 body {
@@ -224,6 +225,7 @@ body {
     overflow: hidden; 
     position: relative;
     border-radius: 10px;
+    width: calc(100% - 32px);
 }
 
 .ticker-heading { 
@@ -244,6 +246,7 @@ body {
     overflow: hidden;
     position: relative;
     display: flex;
+    width: 100%;
 }
 
 .ticker-content { 
@@ -534,7 +537,8 @@ body {
         position: absolute;
         top: 68px;
         left: 0;
-        width: 100%;
+        width: 100vw;
+        max-width: 100%;
         background: var(--bg-nav);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
@@ -543,6 +547,7 @@ body {
         gap: 16px;
         border-bottom: 1px solid var(--border-color);
         display: none;
+        box-sizing: border-box;
     }
 
     .nav-links.open {
@@ -552,4 +557,5 @@ body {
     .nav-item.active::after {
         display: none;
     }
-}
+    }
+    
