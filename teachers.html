@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Directory - A.H.M Memorial School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-fade-in">
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="A.H.M Memorial School Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="title">A.H.M Memorial School</span>
+                    <span class="subtitle">Member Bari, Gazipur</span>
+                </div>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item lang-text" data-en="Home" data-bn="হোম"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="routine.html" class="nav-item lang-text" data-en="Class Routine" data-bn="ক্লাস রুটিন"><i class="fa-solid fa-calendar-days"></i> Class Routine</a>
+                <a href="results.html" class="nav-item lang-text" data-en="Results" data-bn="ফলাফল"><i class="fa-solid fa-square-poll-vertical"></i> Results</a>
+                <a href="students.html" class="nav-item lang-text" data-en="Students" data-bn="শিক্ষার্থী"><i class="fa-solid fa-user-graduate"></i> Students</a>
+                <a href="teachers.html" class="nav-item lang-text" data-en="Teachers" data-bn="শিক্ষক"><i class="fa-solid fa-chalkboard-user"></i> Teachers</a>
+            </nav>
+            <div class="nav-controls">
+                <button id="langBtn" class="ctrl-btn glass-btn" type="button" aria-label="Toggle Language">
+                    <i class="fa-solid fa-language"></i> <span id="langText">EN</span>
+                </button>
+                <button id="themeBtn" class="ctrl-btn glass-btn" type="button" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+                <button id="mobileMenuBtn" class="hamburger-btn glass-btn" type="button" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content section">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="lang-text" data-en="Faculty & Academic Staff" data-bn="শিক্ষকমণ্ডলী ও একাডেমিক স্টাফ">Faculty & Academic Staff</h2>
+            </div>
+            <div class="card-grid" id="teacherGrid"></div>
+        </div>
+    </main>
+
+    <footer class="site-footer glass-card">
+        <p>&copy; 2026 Abdul Hakim Mia Memorial School, Member Bari, Gazipur.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Results Portal - A.H.M Memorial School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-fade-in">
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="A.H.M Memorial School Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="title">A.H.M Memorial School</span>
+                    <span class="subtitle">Member Bari, Gazipur</span>
+                </div>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item lang-text" data-en="Home" data-bn="হোম"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="routine.html" class="nav-item lang-text" data-en="Class Routine" data-bn="ক্লাস রুটিন"><i class="fa-solid fa-calendar-days"></i> Class Routine</a>
+                <a href="results.html" class="nav-item lang-text" data-en="Results" data-bn="ফলাফল"><i class="fa-solid fa-square-poll-vertical"></i> Results</a>
+                <a href="students.html" class="nav-item lang-text" data-en="Students" data-bn="শিক্ষার্থী"><i class="fa-solid fa-user-graduate"></i> Students</a>
+                <a href="teachers.html" class="nav-item lang-text" data-en="Teachers" data-bn="শিক্ষক"><i class="fa-solid fa-chalkboard-user"></i> Teachers</a>
+            </nav>
+            <div class="nav-controls">
+                <button id="langBtn" class="ctrl-btn glass-btn" type="button" aria-label="Toggle Language">
+                    <i class="fa-solid fa-language"></i> <span id="langText">EN</span>
+                </button>
+                <button id="themeBtn" class="ctrl-btn glass-btn" type="button" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+                <button id="mobileMenuBtn" class="hamburger-btn glass-btn" type="button" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content section">
+        <div class="container" style="max-width: 680px;">
+            <div class="section-head text-center">
+                <h2 class="lang-text" data-en="Academic Results Portal" data-bn="একাডেমিক ফলাফল পোর্টাল">Academic Results Portal</h2>
+                <p class="lang-text" data-en="Enter your roll number and class to view your report card." data-bn="আপনার রিপোর্ট কার্ড দেখতে রোল নম্বর এবং শ্রেণী প্রবেশ করান।">Enter your roll number and class to view your report card.</p>
+            </div>
+
+            <div class="box glass-card">
+                <form id="resultForm" onsubmit="handleResultSearch(event)">
+                    <div class="field-group">
+                        <label class="lang-text" data-en="Roll Number" data-bn="রোল নম্বর">Roll Number</label>
+                        <input type="text" id="resultRoll" placeholder="e.g. 01 or 801" class="input-field" required>
+                    </div>
+
+                    <div class="field-group" style="margin-top: 14px;">
+                        <label class="lang-text" data-en="Class" data-bn="শ্রেণী">Class</label>
+                        <select id="resultClass" class="input-field">
+                            <option value="Class 8">Class 8</option>
+                            <option value="Class 9">Class 9</option>
+                            <option value="Class 10">Class 10</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="action-btn glass-btn" style="margin-top: 20px;">
+                        <i class="fa-solid fa-magnifying-glass"></i> <span class="lang-text" data-en="View Result" data-bn="ফলাফল দেখুন">View Result</span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="resultCard" class="result-card glass-card hidden"></div>
+        </div>
+    </main>
+
+    <footer class="site-footer glass-card">
+        <p>&copy; 2026 Abdul Hakim Mia Memorial School, Member Bari, Gazipur.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

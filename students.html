@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Directory - A.H.M Memorial School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-fade-in">
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="A.H.M Memorial School Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="title">A.H.M Memorial School</span>
+                    <span class="subtitle">Member Bari, Gazipur</span>
+                </div>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item lang-text" data-en="Home" data-bn="হোম"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="routine.html" class="nav-item lang-text" data-en="Class Routine" data-bn="ক্লাস রুটিন"><i class="fa-solid fa-calendar-days"></i> Class Routine</a>
+                <a href="results.html" class="nav-item lang-text" data-en="Results" data-bn="ফলাফল"><i class="fa-solid fa-square-poll-vertical"></i> Results</a>
+                <a href="students.html" class="nav-item lang-text" data-en="Students" data-bn="শিক্ষার্থী"><i class="fa-solid fa-user-graduate"></i> Students</a>
+                <a href="teachers.html" class="nav-item lang-text" data-en="Teachers" data-bn="শিক্ষক"><i class="fa-solid fa-chalkboard-user"></i> Teachers</a>
+            </nav>
+            <div class="nav-controls">
+                <button id="langBtn" class="ctrl-btn glass-btn" type="button" aria-label="Toggle Language">
+                    <i class="fa-solid fa-language"></i> <span id="langText">EN</span>
+                </button>
+                <button id="themeBtn" class="ctrl-btn glass-btn" type="button" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+                <button id="mobileMenuBtn" class="hamburger-btn glass-btn" type="button" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content section">
+        <div class="container">
+            <div class="section-head text-center">
+                <h2 class="lang-text" data-en="Student Directory" data-bn="শিক্ষার্থী তালিকা">Student Directory</h2>
+                <p class="lang-text" data-en="Search student records and view basic academic details." data-bn="শিক্ষার্থীদের তথ্য অনুসন্ধান করুন এবং প্রয়োজনীয় বিবরণ দেখুন।">Search student records and view basic academic details.</p>
+            </div>
+
+            <div class="box glass-card">
+                <div class="filter-controls">
+                    <input type="text" id="studentFilterInput" placeholder="Search student or parent name..." class="input-field" onkeyup="filterStudentTable()">
+                    <select id="classFilterSelect" class="input-field" onchange="filterStudentTable()">
+                        <option value="all">All Classes</option>
+                        <option value="Class 8">Class 8</option>
+                        <option value="Class 9">Class 9</option>
+                        <option value="Class 10">Class 10</option>
+                    </select>
+                </div>
+                
+                <div class="table-scroll">
+                    <table class="responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Roll</th>
+                                <th class="lang-text" data-en="Student Name" data-bn="শিক্ষার্থীর নাম">Student Name</th>
+                                <th class="lang-text" data-en="Class" data-bn="শ্রেণী">Class</th>
+                                <th class="lang-text" data-en="Father's Name" data-bn="পিতার নাম">Father's Name</th>
+                                <th class="lang-text" data-en="Action" data-bn="অ্যাকশন">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="studentModal" class="modal hidden" onclick="handleBackdropClick(event)">
+        <div class="modal-card glass-card">
+            <button class="close-btn" type="button" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="profile-header">
+                <div class="avatar-circle" id="modalAvatar">ST</div>
+                <div>
+                    <h3 id="modalName">Student Name</h3>
+                    <p class="subtitle" id="modalClassRoll">Class 8 | Roll: 801</p>
+                </div>
+            </div>
+
+            <div class="profile-grid">
+                <div class="profile-section">
+                    <h4 class="section-title">Academic Details</h4>
+                    <p><strong>Class:</strong> <span id="modalClass">--</span></p>
+                    <p><strong>Roll ID:</strong> <span id="modalRoll">--</span></p>
+                    <p><strong>Status:</strong> <span style="color: #22c55e; font-weight: 600;">Active Student</span></p>
+                </div>
+
+                <div class="profile-section">
+                    <h4 class="section-title">Parental & Contact Details</h4>
+                    <p><strong>Father's Name:</strong> <span id="modalFather">--</span></p>
+                    <p><strong>Mother's Name:</strong> <span id="modalMother">--</span></p>
+                    <p><strong>Contact Phone:</strong> <span id="modalContact">--</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer glass-card">
+        <p>&copy; 2026 Abdul Hakim Mia Memorial School, Member Bari, Gazipur.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
